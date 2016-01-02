@@ -9,6 +9,12 @@
 <p><%= @article.body %></p>
 <br/>
 <p>
+  <% if @article.image.exists? %>
+      <%= image_tag @article.image.url %><br/>
+  <% end %>
+</p>
+<br/>
+<p>
 <%= link_to "EDIT", edit_article_path(@article) %>
 &nbsp;&nbsp;&nbsp;&nbsp;
 <%= link_to "DELETE", article_path(@article), method: :delete,
